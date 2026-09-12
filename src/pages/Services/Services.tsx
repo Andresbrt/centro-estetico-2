@@ -33,7 +33,7 @@ export default function ServicesPage() {
     return items.filter((service) => {
       const matchesSearch =
         service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        service.description.toLowerCase().includes(searchQuery.toLowerCase())
+        (service.description || '').toLowerCase().includes(searchQuery.toLowerCase())
 
       if (!matchesSearch) return false
 
